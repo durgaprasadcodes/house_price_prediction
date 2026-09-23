@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+scikit-learn
+numpy 
+pandas
+category_encoders 
