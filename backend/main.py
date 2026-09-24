@@ -58,8 +58,15 @@ async def prediction(data: Data):
     predicted_log_price = model.predict(new_record)[0]
 
     # Convert log(price) back to original price
-    predicted_price = np.expm1(predicted_log_price)
+    predicted_price = float(np.expm1(predicted_log_price))
+    predicted_price_per_sqft = round(predicted_price / data.size_sqft, 2) if data.size_sqft > 0 else 0.0
+    locality_recognized = False if "Other / not listed" in data.locality_key else True
+    district_recognized = True
 
     return {
+        "predicted_price_inr": round(predicted_price, 2),
+        "predicted_price_per_sqft": predicted_price_per_sqft,
+        "district_recognized": district_recognized,
+        "locality_recognized": locality_recognized,
         "prediction": f"Predicted price: ₹{predicted_price:,.0f}"
     }
