@@ -25,8 +25,10 @@ app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
     allow_headers=["*"],
-    allow_methods=["*"],
-    allow_origins=["https://ap-ts-house-price-prediction.vercel.app"]
+    allow_origins=[
+        "https://ap-ts-house-price-prediction.vercel.app",
+        "http://localhost:5173",
+    ]
 )
 
 model = joblib.load("model.pkl")
