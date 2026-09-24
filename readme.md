@@ -13,20 +13,16 @@ pipeline, the FastAPI service, and Docker deployment.
 ## 1. Project structure
 
 ```
-.
-├── ap_telangana_real_estate_dataset.csv   # training data (6,510 rows)
-├── generate_ap_real_estate_dataset.py     # regenerates/extends the dataset
-├── locations.json                         # state -> district -> locality tree
-├── train_price_model.py                   # trains + saves the model
-├── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
-├── artifacts/                             # created by training, mounted into the container
-│   ├── price_model.joblib
-│   └── metrics.json
-└── app/
-    ├── __init__.py
-    └── main.py                            # FastAPI service
+House Price Prediction/
+│
+├── 📁backend/
+│   ├── main.py
+│   ├── Dockerfile  
+│   ├── model.pkl
+│   └── requirements.txt                          # FastAPI service
+├── frontend/
+    └── React.js
+
 ```
 
 Frontend pieces (built earlier, not part of this backend):
