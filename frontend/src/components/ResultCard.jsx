@@ -1,11 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, animate, useMotionValue, useTransform } from 'framer-motion';
 
-/**
- * Format numbers according to Indian numbering system (Lakhs & Crores)
- * @param {number} value
- * @returns {{ formattedShort: string, formattedFull: string, unit: string }}
- */
+
 const formatIndianCurrency = (value) => {
   const num = Math.round(value || 0);
 
