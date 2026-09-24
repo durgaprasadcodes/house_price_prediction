@@ -1,53 +1,73 @@
 /* ==========================================================================
-   PropValuer.ai Design Tokens & Global CSS Reset
+   PropValuer.ai — White + Purple SaaS Design Tokens & Global Reset
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 :root {
-  /* Color Palette */
-  --bg-primary: #07090e;
-  --bg-secondary: #0d121d;
-  --bg-card: rgba(15, 23, 42, 0.72);
-  --bg-card-hover: rgba(22, 33, 62, 0.85);
-  --bg-input: rgba(11, 17, 33, 0.7);
-  --bg-input-focus: rgba(15, 23, 45, 0.95);
+  /* ── Core Palette ── */
+  --bg-primary:    #fafafc;
+  --bg-secondary:  #f3f4f8;
+  --bg-card:       rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.97);
+  --bg-input:      rgba(255, 255, 255, 0.9);
+  --bg-input-focus: #ffffff;
 
-  /* Accents & Gradients */
-  --accent-cyan: #06b6d4;
-  --accent-blue: #3b82f6;
-  --accent-indigo: #6366f1;
-  --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
-  --accent-rose: #f43f5e;
+  /* ── Purple Accent Scale ── */
+  --purple-50:  #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-300: #d8b4fe;
+  --purple-400: #c084fc;
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7c3aed;
+  --purple-800: #6d28d9;
+  --purple-900: #4c1d95;
 
-  --gradient-brand: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #a855f7 100%);
-  --gradient-btn: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
-  --gradient-btn-hover: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
-  --gradient-emerald: linear-gradient(135deg, #059669 0%, #10b981 100%);
-  --gradient-amber: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  --accent-purple:  #8b5cf6;
+  --accent-violet:  #7c3aed;
+  --accent-fuchsia: #d946ef;
+  --accent-indigo:  #6366f1;
+  --accent-green:   #10b981;
+  --accent-amber:   #f59e0b;
+  --accent-rose:    #f43f5e;
 
-  /* Borders & Glass */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(56, 189, 248, 0.5);
-  --border-glass: rgba(255, 255, 255, 0.12);
-  --border-card-highlight: rgba(255, 255, 255, 0.15);
+  /* ── Gradients ── */
+  --gradient-brand:     linear-gradient(135deg, #8b5cf6 0%, #6366f1 50%, #d946ef 100%);
+  --gradient-btn:       linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  --gradient-btn-hover: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+  --gradient-soft:      linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+  --gradient-card:      linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(250,245,255,0.85) 100%);
 
-  /* Typography */
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* ── Borders ── */
+  --border-subtle:         rgba(139, 92, 246, 0.12);
+  --border-medium:         rgba(139, 92, 246, 0.25);
+  --border-focus:          rgba(139, 92, 246, 0.6);
+  --border-card-highlight: rgba(139, 92, 246, 0.18);
+  --border-glass:          rgba(255, 255, 255, 0.7);
+
+  /* ── Typography ── */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'Space Grotesk', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  --text-main:    #1a1523;
+  --text-muted:   #6b7280;
+  --text-dim:     #9ca3af;
+  --text-purple:  #7c3aed;
 
-  /* 3D Shadows */
-  --shadow-3d-sm: 0 4px 12px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
-  --shadow-3d-md: 0 12px 30px -5px rgba(0, 0, 0, 0.5), 0 4px 10px -2px rgba(0, 0, 0, 0.3);
-  --shadow-3d-lg: 0 25px 60px -12px rgba(0, 0, 0, 0.7), 0 12px 24px -6px rgba(0, 0, 0, 0.4);
-  --shadow-glow-cyan: 0 0 35px -5px rgba(56, 189, 248, 0.25);
-  --shadow-glow-indigo: 0 0 45px -8px rgba(99, 102, 241, 0.3);
+  /* ── Shadows ── */
+  --shadow-sm:         0 1px 3px rgba(139, 92, 246, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md:         0 4px 16px rgba(139, 92, 246, 0.12), 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg:         0 10px 40px rgba(139, 92, 246, 0.18), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-xl:         0 20px 60px rgba(139, 92, 246, 0.2), 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-glow:       0 0 40px rgba(139, 92, 246, 0.2);
+  --shadow-glow-sm:    0 0 20px rgba(139, 92, 246, 0.15);
+  --shadow-inner:      inset 0 1px 4px rgba(139, 92, 246, 0.08);
 
-  /* Transitions */
-  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  /* ── Transitions ── */
+  --transition-smooth: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast:   all 0.15s ease;
 }
 
 *, *::before, *::after {
@@ -68,33 +88,21 @@ html, body {
   min-height: 100vh;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f3f4f8; }
+::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(139, 92, 246, 0.5); }
 
-/* Selection */
-::selection {
-  background: rgba(99, 102, 241, 0.4);
-  color: #ffffff;
-}
+/* ── Selection ── */
+::selection { background: rgba(139, 92, 246, 0.2); color: #4c1d95; }
 
 code {
   font-family: var(--font-mono);
-  background: rgba(255, 255, 255, 0.08);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.9em;
-  color: #38bdf8;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 0.88em;
+  color: var(--accent-violet);
 }
