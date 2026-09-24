@@ -23,6 +23,12 @@ app = FastAPI()
 model = joblib.load("model.pkl")
 
 
+@app.get("/")
+async def home():   
+    return {
+        "message" : "House Price Prediction API is Successfully Running"
+    }
+
 @app.post("/predict")
 async def prediction(data: Data):
 
