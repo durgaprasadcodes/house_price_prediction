@@ -26,7 +26,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_headers=["*"],
     allow_methods=["*"],
-    allow_origins=["https://ap-ts-house-price-prediction.vercel.app/"]
+    allow_origins=["https://ap-ts-house-price-prediction.vercel.app"]
 )
 
 model = joblib.load("model.pkl")
