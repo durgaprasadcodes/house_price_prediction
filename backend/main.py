@@ -26,7 +26,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_headers=["*"],
     allow_methods=["*"],
-    allow_origins=["*"]
+    allow_origins=["https://ap-ts-house-price-prediction.vercel.app/"]
 )
 
 model = joblib.load("model.pkl")
@@ -54,10 +54,8 @@ async def prediction(data: Data):
         "facing": data.facing,
     }])
 
-    # Model predicts log(price)
     predicted_log_price = model.predict(new_record)[0]
 
-    # Convert log(price) back to original price
     predicted_price = float(np.expm1(predicted_log_price))
     predicted_price_per_sqft = round(predicted_price / data.size_sqft, 2) if data.size_sqft > 0 else 0.0
     locality_recognized = False if "Other / not listed" in data.locality_key else True
